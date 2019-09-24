@@ -1,0 +1,18 @@
+.whirligig {
+  animation: whirligig 6.4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+@keyframes whirligig {
+  from {transform: rotateY(0deg);}
+  to   {transform: rotateY(360deg);}
+}
+.cd {
+  animation: cd 20s linear infinite;
+}
+@keyframes cd {
+  from {transform: rotateZ(0deg);}
+  to   {transform: rotateZ(360deg);}
+}
+.paused {
+  animation-play-state: paused;
+}

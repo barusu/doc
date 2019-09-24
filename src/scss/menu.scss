@@ -1,0 +1,114 @@
+.oo-menu {
+  margin-top: 1em;
+  text-align: left;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: .14rem;
+  label {
+    cursor: pointer;
+  }
+}
+.oo-menu-group-title,
+.oo-menu-item a,
+.oo-menu-title {
+  height: .4rem;
+  line-height: .4rem;
+  margin: 0 0 .02rem;
+  user-select: none;
+}
+.oo-menu-title {
+  font-size: .18rem;
+  > a {
+    display: block;
+    padding: 0 .16rem 0 .3rem;
+    color: #333;
+    transition: all .34s;
+    &:hover {
+    color: #50bfff;
+    }
+  }
+  span {
+    padding-left: .5em;
+    font-size: .16rem;
+    color: #777;
+  }
+}
+.oo-menu-group-title {
+  position: relative;
+  display: block;
+  font-size: .14rem;
+  padding: 0 .16rem 0 3em;
+  color: #9c9c9c;
+}
+.oo-menu-item a {
+  display: block;
+  padding: 0 .16rem 0 .4rem;
+  overflow: hidden;
+  transition: height .34s ease-in-out, margin .34s linear;
+  color: #444;
+  transition: all .34s;
+  .key {
+    // color: #999;
+    padding-left: 1em;
+    font-size: 12px;
+    opacity: .5;
+  }
+  &:hover {
+    color: #50bfff;
+  }
+  &.router-link-active {
+    // background: lighten(#50bfff, 25%);
+    color: darken(#50bfff, 20%);
+    // border-right: 2px solid #50bfff;
+    // box-shadow: 1px 0 0 0 #50bfff;
+  }
+}
+.oo-menu-item-list {
+  > .oo-menu-item a {
+    padding-left: .6rem;
+  }
+}
+.oo-arrow {
+  position: absolute;
+  top: 50%;
+  right: .16rem;
+  width: .1rem;
+  height: .1rem;
+  transform: translateY(-50%);
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: .04rem; left: .04rem;
+    vertical-align: baseline;
+    background: #666;
+    width: .06rem;
+    height: .02rem;
+    border-radius: 2px;
+    transition: all 0.34s cubic-bezier(0.645,0.045,0.355,1);
+    transform-origin:16.7% 50%;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(135deg);
+  }
+}
+.oo-ck {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+.oo-ck:checked + .oo-menu-group {
+  .oo-arrow {
+    &::before {
+    transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(225deg);
+    }
+  }
+  .oo-menu-item a {
+    height: 0;
+    margin-bottom: 0;
+  }
+}
