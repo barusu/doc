@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
 import ComponentPage from '@/components/page/component';
+import Transfer from '@/components/page/transfer';
 
 Vue.use(Router);
 
@@ -16,7 +17,7 @@ export default new Router({
       component: ComponentPage,
       children: [
         {path: '', name: 'components', component: HelloWorld},
-        {path: 'icon', name: 'icon', component: HelloWorld}
+        {path: 'transfer', name: 'transfer', component: Transfer}
       ]
     }
   ]

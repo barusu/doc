@@ -10,7 +10,7 @@
             <span class="oo-arrow"></span>
           </label>
           <ul class="oo-menu-item-list">
-            <li class="oo-menu-item"> <router-link :to="{name: 'color'}">Color</router-link> </li>
+            <li class="oo-menu-item"> <router-link :to="{name: 'transfer'}">Transfer <span>选择器</span></router-link> </li>
             <li class="oo-menu-item"> <router-link :to="{name: 'text'}">Text</router-link> </li>
             <li class="oo-menu-item"> <router-link :to="{name: 'button'}">Button</router-link> </li>
             <li class="oo-menu-item"> <router-link :to="{name: 'list'}">List</router-link> </li>
@@ -76,13 +76,13 @@ export default {};
   $borderColor: #ddd;
   .component {
     font-size: .16rem;
-    .sidebar {
+    > .sidebar {
       min-height: 100px;
       width: 20%;
       float: left;
       box-shadow: 1px 0 0 0 $borderColor;
     }
-    .content {
+    > .content {
       overflow: hidden;
       border-left: 1px solid $borderColor;
       text-align: left;
