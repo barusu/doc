@@ -97,13 +97,8 @@
 </template>
 
 <script>
-import Tree from './tree';
-
 export default {
   name: 'oTransfer',
-  components: {
-    xcTree: Tree
-  },
   props: ['data', 'value', 'disabled', 'disableadd', 'size'],
   data() {
     return {
@@ -180,31 +175,39 @@ export default {
         }
         return false;
       });
-      this.depts = this.data.depts.map(i => ({
-        select: false,
-        id: i.id,
-        pid: i.pid,
-        name: i.name,
-        child: []
-      }));
-      this.dutys = this.data.dutys.map(i => ({
-        id: i.id,
-        name: i.name,
-        select: false,
-        depts: i.depts.map(d => ({
-          id: d.id,
-          name: d.name,
-          tid: d.tid,
-          select: false
-        }))
-      }));
-      this.groups = this.data.groups.map(i => ({
-        id: i.id,
-        name: i.name,
-        select: false,
-        users: i.users.map(u => u.id)
-      }));
-      this.users = this.data.users.map(i => ({id: i.id, name: i.name, follow: true}));
+      if(Array.isArray(this.data.depts)) {
+        this.depts = this.data.depts.map(i => ({
+          select: false,
+          id: i.id,
+          pid: i.pid,
+          name: i.name,
+          child: []
+        }));
+      }
+      if(Array.isArray(this.data.dutys)) {
+        this.dutys = this.data.dutys.map(i => ({
+          id: i.id,
+          name: i.name,
+          select: false,
+          depts: i.depts.map(d => ({
+            id: d.id,
+            name: d.name,
+            tid: d.tid,
+            select: false
+          }))
+        }));
+      }
+      if(Array.isArray(this.data.groups)) {
+        this.groups = this.data.groups.map(i => ({
+          id: i.id,
+          name: i.name,
+          select: false,
+          users: i.users.map(u => u.id)
+        }));
+      }
+      if(Array.isArray(this.data.depts)) {
+        this.users = this.data.users.map(i => ({id: i.id, name: i.name, follow: true}));
+      }
       this.defaultSelect();
     },
     defaultSelect() {

@@ -92,7 +92,8 @@ export default {};
         font-family: Helvetica, Arial, sans-serif;
         line-height: 2.5;
         .chinese {
-          font-size: .26rem;
+          font-size: .16rem;
+          color: #777;
         }
       }
       h3 {
@@ -113,7 +114,7 @@ export default {};
         line-height: 2.5;
         margin-top: .5em;
       }
-      p {
+      > p {
         line-height: 1.5;
         color: #678;
         font-size: .14rem;

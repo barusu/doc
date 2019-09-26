@@ -65,6 +65,9 @@
 .oo-menu-item-list {
   > .oo-menu-item a {
     padding-left: .6rem;
+    > span {
+      font-size: 12px;
+    }
   }
 }
 .oo-arrow {

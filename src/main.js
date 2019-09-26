@@ -4,6 +4,11 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import './scss/style.scss';
+// import 'highlight.js/styles/atom-one-light.css';
+import 'highlight.js/styles/solarized-light.css';
+
+import oo from '@/components/jandar/index.js';
+Vue.use(oo);
 
 Vue.config.productionTip = false
 
