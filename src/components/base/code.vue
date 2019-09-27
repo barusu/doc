@@ -3,21 +3,21 @@
 </template>
 
 <script>
-  import hljs from 'highlight.js';
+import hljs from 'highlight.js';
 
-  export default {
-    props: ['lang', 'code'],
-    watch: {
-      code() {
-        this.$nextTick(() => {
-          hljs.highlightBlock(this.$refs.code);
-        });
-      }
-    },
-    mounted() {
+export default {
+  props: ['lang', 'code'],
+  watch: {
+    code() {
       this.$nextTick(() => {
         hljs.highlightBlock(this.$refs.code);
       });
     }
-  };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      hljs.highlightBlock(this.$refs.code);
+    });
+  }
+};
 </script>

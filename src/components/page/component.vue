@@ -133,6 +133,11 @@ export default {};
         }
       }
     }
+    .preview {
+      border: 1px solid $borderColor;
+      padding: .18rem .18rem 0;
+      border-radius: 3px;
+    }
     .footer {
       border-top: 1px solid $borderColor;
     }

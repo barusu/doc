@@ -1,0 +1,66 @@
+.code-wrapper {
+  margin: 0 -.18rem 0;
+  > div {
+    width: 50%;
+    float: left;
+    height: 100%;
+    padding: 10px 0 0 0;
+    &.full {
+      width: 100%;
+    }
+  }
+  .code-control {
+    float: right;
+    font-weight: 900;
+    margin-right: .5em;
+    cursor: pointer;
+    span {
+      font-weight: inherit;
+      opacity: 0;
+    }
+  }
+  .code-control-ck:checked + div {
+    .code-control span {
+      opacity: 1;
+    }
+    .code-head {
+      border-radius: 2px 2px 0 0;
+    }
+    pre {
+      height: 42em;
+      &.m {
+        height: 24em;
+      }
+      &.s {
+        height: 11em;
+      }
+    }
+  }
+  .code-head {
+    font-weight: 600;
+    padding: .5em;
+    margin: 0;
+    background: #fafafa;
+    border-radius: 2px;
+    .svg-icon {
+      vertical-align: top;
+      height: 1.5em;
+    }
+    &.html {
+      color: #e44e24;
+    }
+    &.scss {
+      color: #cf6499;
+    }
+  }
+  pre {
+    height: 0em;
+    border-radius: 0 0 2px 2px;
+    overflow: hidden;
+    transition: height 340ms;
+    code {
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}

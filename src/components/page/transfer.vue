@@ -9,6 +9,13 @@
       <xc-transfer ref="transfer" :data="testData" :value="value" @search="search" @follow="follow" @change="change" :disabled="disabled" :disableadd="disablesearch" :size="[300, 400]">
         <svg t="1563357596999" class="icon-arrow" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4012" width="32" height="32"><path d="M512 512m-460.8 0a460.8 460.8 0 1 0 921.6 0 460.8 460.8 0 1 0-921.6 0Z" fill="#416b41" p-id="4013"></path><path d="M677.888 584.3968L460.8 801.5872l-72.192-72.3968L605.696 512 388.608 294.7584 460.8 222.3616l289.792 289.5872z" fill="#FFFFFF" p-id="4014"></path></svg>
       </xc-transfer>
+      <div class="code-wrapper clearfix">
+        <input type="checkbox" id="code_bg1" class="kakushi code-control-ck">
+        <div class="code-scss full">
+          <p class="code-head scss"><xc-svg type="sass"></xc-svg> SCSS <label class="code-control" for="code_bg1">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="html" :code="html"></xc-code>
+        </div>
+      </div>
     </div>
     <div>
       <button type="button"  @click="disabled = !disabled">禁用/取消</button>
@@ -16,6 +23,10 @@
       <button type="button"  @click="getValue">获取数据</button>
       <pre v-text="testValue"></pre>
     </div>
+    <h3><span>Attributes</span></h3>
+    <xc-doc :list="doc"></xc-doc>
+    <h3><span>Events</span></h3>
+    <xc-doc :list="eventsDoc" type="event"></xc-doc>
   </div>
 </template>
 
@@ -119,7 +130,22 @@ export default {
       },
       testValue: null,
       disablesearch: false,
-      disabled: false
+      disabled: false,
+      html: `<xc-transfer ref="transfer" :data="testData" :value="value" @search="search" @follow="follow" @change="change" :disabled="disabled" :disableadd="disablesearch" :size="[300, 400]">
+  <svg class="icon-arrow" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4012" width="32" height="32"><path d="M512 512m-460.8 0a460.8 460.8 0 1 0 921.6 0 460.8 460.8 0 1 0-921.6 0Z" fill="#416b41" p-id="4013"></path><path d="M677.888 584.3968L460.8 801.5872l-72.192-72.3968L605.696 512 388.608 294.7584 460.8 222.3616l289.792 289.5872z" fill="#FFFFFF" p-id="4014"></path></svg>
+</xc-transfer>`,
+      doc: [
+        {property: 'data', description: '选择项数据,格式参考mock', type: 'Object', default: ''},
+        {property: 'value', description: '默认选中项', type: 'Object', default: ''},
+        {property: 'disabled', description: '是否禁用', type: 'Boolean', default: 'false'},
+        {property: 'disableadd', description: '是否禁用搜索', type: 'Boolean', default: 'false'},
+        {property: 'size', description: '单个窗体的宽高值(不能小于默认值)', type: 'Array', default: '[240, 100]'}
+      ],
+      eventsDoc: [
+        {eventName: 'search', description: '搜索事件,回调函数参数格式参考mock', callbackParamet: 'String: 关键字, callback: 回调函数'},
+        {eventName: 'follow', description: '关注/取关事件(设置常用联系人)', callbackParamet: 'Object: {id, name, follow}, callback: 回调函数'},
+        {eventName: 'change', description: '选择项变化时', callbackParamet: ''}
+      ]
     };
   },
   methods: {
