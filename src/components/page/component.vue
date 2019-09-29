@@ -137,6 +137,10 @@ export default {};
       border: 1px solid $borderColor;
       padding: .18rem .18rem 0;
       border-radius: 3px;
+      overflow: hidden;
+      .control {
+        margin-bottom: 1em;
+      }
     }
     .footer {
       border-top: 1px solid $borderColor;

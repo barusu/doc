@@ -276,7 +276,7 @@ export default {
           })),
           users: this.SUsers.map(i => ({id: i.id, name: i.name}))
         };
-        this.$emit('change');
+        this.$emit('change', this.selectValue);
       }, 242);
     }
   },
@@ -461,6 +461,7 @@ export default {
         border-radius: 2px;
         background-color: #409eff;
         color: #fff;
+        user-select: none;
         cursor: pointer;
         &.disable {
           filter: grayscale(1);

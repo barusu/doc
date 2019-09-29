@@ -3,6 +3,14 @@
     <h2><span>Transfer</span> <span class="chinese">基于穿梭框的权限选择器</span></h2>
     <p>高度定制组件。</p>
     <div class="preview clearfix">
+      <div class="control">
+        <xc-button type="info" @click="disabled = !disabled">
+          <span v-text="disabled ? '取消' : '禁用'"></span>
+        </xc-button>
+        <xc-button type="info" @click="disablesearch = !disablesearch">
+          <span v-text="disablesearch ? '启用搜索' : '禁用搜索'"></span>
+        </xc-button>
+      </div>
       <!-- ref: 自定义组件名称 使用[this.$refs.名称.Value]获取选中的数据集 -->
       <!-- data: 待选数据 value: 初始选中的数据(在data修改之后设置没有效果,需再次修改data或调用组件的defaultSelect方法) -->
       <!-- search: 搜索事件 [param1: 关键字  param2: 回调函数] -->
@@ -11,17 +19,11 @@
       </xc-transfer>
       <div class="code-wrapper clearfix">
         <input type="checkbox" id="code_bg1" class="kakushi code-control-ck">
-        <div class="code-scss full">
-          <p class="code-head scss"><xc-svg type="sass"></xc-svg> SCSS <label class="code-control" for="code_bg1">&lt;<span>/</span>&gt;</label></p>
-          <xc-code lang="html" :code="html"></xc-code>
+        <div class="code-html full">
+          <p class="code-head html"><xc-svg type="html"></xc-svg> HTML <label class="code-control" for="code_bg1">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="html" :code="html" class="m"></xc-code>
         </div>
       </div>
-    </div>
-    <div>
-      <button type="button"  @click="disabled = !disabled">禁用/取消</button>
-      <button type="button"  @click="disablesearch = !disablesearch">禁用/取消搜索</button>
-      <button type="button"  @click="getValue">获取数据</button>
-      <pre v-text="testValue"></pre>
     </div>
     <h3><span>Attributes</span></h3>
     <xc-doc :list="doc"></xc-doc>
@@ -131,8 +133,14 @@ export default {
       testValue: null,
       disablesearch: false,
       disabled: false,
-      html: `<xc-transfer ref="transfer" :data="testData" :value="value" @search="search" @follow="follow" @change="change" :disabled="disabled" :disableadd="disablesearch" :size="[300, 400]">
-  <svg class="icon-arrow" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4012" width="32" height="32"><path d="M512 512m-460.8 0a460.8 460.8 0 1 0 921.6 0 460.8 460.8 0 1 0-921.6 0Z" fill="#416b41" p-id="4013"></path><path d="M677.888 584.3968L460.8 801.5872l-72.192-72.3968L605.696 512 388.608 294.7584 460.8 222.3616l289.792 289.5872z" fill="#FFFFFF" p-id="4014"></path></svg>
+      html: `<!-- ref: 自定义组件名称 可使用[this.$refs.名称.Value]获取选中的数据项(this.$refs.transfer.Value) -->
+<xc-transfer ref="transfer" @search="search" @follow="follow" @change="change"
+             :data="testData" :value="value" :disabled="disabled" :disableadd="disablesearch" :size="[300, 400]">
+  <!-- 标签内的内容会被添加到两个列表框之间,可以用来添加这样的箭头图标 -->
+  <svg class="icon-arrow" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+    <path d="M512 512m-460.8 0a460.8 460.8 0 1 0 921.6 0 460.8 460.8 0 1 0-921.6 0Z" fill="#416b41"></path>
+    <path d="M677.888 584.3968L460.8 801.5872l-72.192-72.3968L605.696 512 388.608 294.7584 460.8 222.3616l289.792 289.5872z" fill="#FFFFFF"></path>
+  </svg>
 </xc-transfer>`,
       doc: [
         {property: 'data', description: '选择项数据,格式参考mock', type: 'Object', default: ''},
@@ -144,7 +152,7 @@ export default {
       eventsDoc: [
         {eventName: 'search', description: '搜索事件,回调函数参数格式参考mock', callbackParamet: 'String: 关键字, callback: 回调函数'},
         {eventName: 'follow', description: '关注/取关事件(设置常用联系人)', callbackParamet: 'Object: {id, name, follow}, callback: 回调函数'},
-        {eventName: 'change', description: '选择项变化时', callbackParamet: ''}
+        {eventName: 'change', description: '选择项变化时', callbackParamet: 'Object: 已选中的数据项'}
       ]
     };
   },
@@ -163,9 +171,10 @@ export default {
     }
   },
   mounted() {
-    $.get(host + 'cms-rest/manager', data => {
-      this.testData = data;
-    });
+    // $.get(host + 'cms-rest/manager', data => {
+    //   this.testData = data;
+    // });
+    this.testData = demoData;
   }
 };
 </script>
