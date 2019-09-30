@@ -141,6 +141,17 @@ export default {};
       .control {
         margin-bottom: 1em;
       }
+      .code-wrapper {
+        margin: 0 -.18rem 0;
+      }
+    }
+    .data-view {
+      border: 1px solid $borderColor;
+      border-radius: 3px;
+      overflow: hidden;
+      .code-wrapper .code-head {
+        border-top: 0;
+      }
     }
     .footer {
       border-top: 1px solid $borderColor;

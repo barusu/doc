@@ -17,10 +17,11 @@
       <xc-transfer ref="transfer" :data="testData" :value="value" @search="search" @follow="follow" @change="change" :disabled="disabled" :disableadd="disablesearch" :size="[300, 400]">
         <svg t="1563357596999" class="icon-arrow" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4012" width="32" height="32"><path d="M512 512m-460.8 0a460.8 460.8 0 1 0 921.6 0 460.8 460.8 0 1 0-921.6 0Z" fill="#416b41" p-id="4013"></path><path d="M677.888 584.3968L460.8 801.5872l-72.192-72.3968L605.696 512 388.608 294.7584 460.8 222.3616l289.792 289.5872z" fill="#FFFFFF" p-id="4014"></path></svg>
       </xc-transfer>
+      <br>
       <div class="code-wrapper clearfix">
-        <input type="checkbox" id="code_bg1" class="kakushi code-control-ck">
+        <input type="checkbox" id="code_transfer" class="kakushi code-control-ck">
         <div class="code-html full">
-          <p class="code-head html"><xc-svg type="html"></xc-svg> HTML <label class="code-control" for="code_bg1">&lt;<span>/</span>&gt;</label></p>
+          <p class="code-head html"><xc-svg type="html"></xc-svg> HTML <label class="code-control" for="code_transfer">&lt;<span>/</span>&gt;</label></p>
           <xc-code lang="html" :code="html" class="m"></xc-code>
         </div>
       </div>
@@ -29,6 +30,20 @@
     <xc-doc :list="doc"></xc-doc>
     <h3><span>Events</span></h3>
     <xc-doc :list="eventsDoc" type="event"></xc-doc>
+    <div class="data-view">
+      <div class="code-wrapper clearfix">
+        <input type="checkbox" id="code_transfer_data1" class="kakushi code-control-ck" v-model="ck1">
+        <div class="code-json">
+          <p class="code-head json"><xc-svg type="json"></xc-svg> JSON <label class="code-control" for="code_transfer_data1">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="json" :code="data1"></xc-code>
+        </div>
+        <input type="checkbox" id="code_transfer_data2" class="kakushi code-control-ck" v-model="ck1">
+        <div class="code-json">
+          <p class="code-head json"><xc-svg type="json"></xc-svg> JSON <label class="code-control" for="code_transfer_data2">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="json" :code="data2"></xc-code>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -142,6 +157,9 @@ export default {
     <path d="M677.888 584.3968L460.8 801.5872l-72.192-72.3968L605.696 512 388.608 294.7584 460.8 222.3616l289.792 289.5872z" fill="#FFFFFF"></path>
   </svg>
 </xc-transfer>`,
+      ck1: false,
+      data1: `{}`,
+      data2: `{}`,
       doc: [
         {property: 'data', description: '选择项数据,格式参考mock', type: 'Object', default: ''},
         {property: 'value', description: '默认选中项', type: 'Object', default: ''},

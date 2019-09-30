@@ -1,5 +1,5 @@
 <template>
-  <div class="o-tree" v-if="isShow">
+  <div class="xc-tree" v-if="isShow">
     <div class="item" @click="select(data)" :class="{'select': data.select}" :style="style">
       <span class="arrow" :class="{'open': status}" @click.stop="status = !status">
         <svg v-if="hasChild" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="10" height="10">
@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .o-tree {
+  .xc-tree {
     .arrow {
       display: inline-block;
       width: 20px;
