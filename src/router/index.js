@@ -19,6 +19,9 @@ export default new Router({
         {path: '', name: 'components', component: HelloWorld},
         {path: 'transfer', name: 'transfer', component: Transfer}
       ]
+    }, {
+      path: '*',
+      redirect: '/'
     }
   ]
 });

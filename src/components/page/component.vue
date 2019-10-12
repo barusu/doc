@@ -11,12 +11,12 @@
           </label>
           <ul class="oo-menu-item-list">
             <li class="oo-menu-item"> <router-link :to="{name: 'transfer'}">Transfer <span>选择器</span></router-link> </li>
-            <li class="oo-menu-item"> <router-link :to="{name: 'text'}">Text</router-link> </li>
-            <li class="oo-menu-item"> <router-link :to="{name: 'button'}">Button</router-link> </li>
-            <li class="oo-menu-item"> <router-link :to="{name: 'list'}">List</router-link> </li>
+            <!-- <li class="oo-menu-item"> <router-link :to="{name: 'text'}">Text</router-link> </li> -->
+            <!-- <li class="oo-menu-item"> <router-link :to="{name: 'button'}">Button</router-link> </li> -->
+            <!-- <li class="oo-menu-item"> <router-link :to="{name: 'list'}">List</router-link> </li> -->
           </ul>
         </p>
-        <input type="checkbox" id="ck_feedback" class="oo-ck">
+        <!-- <input type="checkbox" id="ck_feedback" class="oo-ck">
         <p class="oo-menu-group">
           <label for="ck_feedback" class="oo-menu-group-title">
             <div>Feedback</div>
@@ -60,7 +60,7 @@
             <li class="oo-menu-item"> <router-link :to="{name: 'layout'}">Layout <span class="key">iframe</span></router-link> </li>
             <li class="oo-menu-item"> <router-link :to="{name: 'layout-vue'}">Layout <span class="key">.vue</span></router-link> </li>
           </ul>
-        </p>
+        </p> -->
       </div>
     </div>
     <router-view class="content"></router-view>
