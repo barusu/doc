@@ -3,14 +3,17 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+
+import Shiro from 'shiroui';
+import 'shiroui/dist/index.css';
+Vue.use(Shiro);
+
 import './scss/style.scss';
 import 'highlight.js/styles/atom-one-light.css';
 // import 'highlight.js/styles/solarized-light.css';
 
 import xc from '@/components/base/index.js';
 Vue.use(xc);
-import oo from '@/components/jandar/index.js';
-Vue.use(oo);
 
 Vue.config.productionTip = false
 

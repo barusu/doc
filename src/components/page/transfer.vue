@@ -21,7 +21,7 @@
       <div class="code-wrapper clearfix">
         <input type="checkbox" id="code_transfer" class="kakushi code-control-ck">
         <div class="code-html full">
-          <p class="code-head html"><xc-svg type="html"></xc-svg> HTML <label class="code-control" for="code_transfer">&lt;<span>/</span>&gt;</label></p>
+          <p class="code-head html"><xc-icon type="html"></xc-icon> HTML <label class="code-control" for="code_transfer">&lt;<span>/</span>&gt;</label></p>
           <xc-code lang="html" :code="html" class="m"></xc-code>
         </div>
       </div>
@@ -34,12 +34,12 @@
       <div class="code-wrapper clearfix">
         <input type="checkbox" id="code_transfer_data1" class="kakushi code-control-ck" v-model="ck1">
         <div class="code-json">
-          <p class="code-head json"><xc-svg type="json"></xc-svg> JSON <label class="code-control" for="code_transfer_data1">&lt;<span>/</span>&gt;</label></p>
+          <p class="code-head json"><xc-icon type="json"></xc-icon> JSON <label class="code-control" for="code_transfer_data1">&lt;<span>/</span>&gt;</label></p>
           <xc-code lang="json" :code="data1"></xc-code>
         </div>
         <input type="checkbox" id="code_transfer_data2" class="kakushi code-control-ck" v-model="ck1">
         <div class="code-json">
-          <p class="code-head json"><xc-svg type="json"></xc-svg> JSON <label class="code-control" for="code_transfer_data2">&lt;<span>/</span>&gt;</label></p>
+          <p class="code-head json"><xc-icon type="json"></xc-icon> JSON <label class="code-control" for="code_transfer_data2">&lt;<span>/</span>&gt;</label></p>
           <xc-code lang="json" :code="data2"></xc-code>
         </div>
       </div>
@@ -49,16 +49,16 @@
 
 <script>
 import $ from '@/libs/ajax';
-import Transfer from '@/components/jandar/transfer/transfer';
+// import Transfer from '@/components/jandar/transfer/transfer';
 
 const host = 'https://easy-mock.com/mock/5ce21a974546ce6ad9bd3aca/';
 // eslint-disable-next-line
 const demoData = {"isAll":false,"depts":[{"id":1,"pid":0,"name":"叶刚"},{"id":2,"pid":0,"name":"熊桂英"},{"id":3,"pid":0,"name":"贾刚"},{"id":4,"pid":1,"name":"方明"},{"id":5,"pid":1,"name":"贾艳"},{"id":6,"pid":1,"name":"蒋霞"},{"id":7,"pid":0,"name":"钱平"},{"id":8,"pid":0,"name":"余勇"},{"id":9,"pid":1,"name":"李秀兰"},{"id":10,"name":"郭桂英"},{"id":11,"pid":20,"name":"邵秀兰"},{"id":12,"name":"杜秀兰"},{"id":13,"pid":20,"name":"贾勇"},{"id":14,"pid":4,"name":"雷艳"},{"id":15,"pid":14,"name":"蔡霞"},{"id":16,"pid":4,"name":"戴强"},{"id":17,"name":"林刚"},{"id":18,"pid":20,"name":"方洋"},{"id":19,"pid":14,"name":"江娟"},{"id":20,"pid":14,"name":"卢超"},{"id":21,"pid":20,"name":"苏勇"}],"dutys":[{"id":1,"name":"徐秀兰","depts":[{"id":1,"name":"梁丽","tid":"Perez"},{"id":2,"name":"王明","tid":"Wilson"},{"id":3,"name":"丁杰","tid":"Perez"}]},{"id":2,"name":"石强","depts":[{"id":1,"name":"潘丽","tid":"Lee"},{"id":2,"name":"叶娜","tid":"Thompson"},{"id":3,"name":"文霞","tid":"White"}]},{"id":3,"name":"于芳","depts":[{"id":1,"name":"于秀英","tid":"Lee"},{"id":2,"name":"韩涛","tid":"Garcia"},{"id":3,"name":"夏桂英","tid":"Hall"},{"id":4,"name":"雷秀兰","tid":"Robinson"},{"id":5,"name":"戴艳","tid":"Wilson"},{"id":6,"name":"孙涛","tid":"Young"},{"id":7,"name":"孔杰","tid":"Martinez"},{"id":8,"name":"尹磊","tid":"Robinson"},{"id":9,"name":"陈磊","tid":"Rodriguez"}]},{"id":4,"name":"范芳","depts":[]}],"groups":[{"id":1,"name":"范桂英","users":[{"id":1,"name":"张三"},{"id":2,"name":"赵四"},{"id":3,"name":"王五"},{"id":4,"name":"王雨"}]},{"id":2,"name":"叶杰","users":[{"id":1,"name":"张三"},{"id":2,"name":"赵四"},{"id":4,"name":"王雨"}]}],"users":[{"id":1,"name":"张三"},{"id":2,"name":"赵四"},{"id":3,"name":"王五"}],"display":{"depts":true,"dutys":true,"groups":true,"users":true}};
 
 export default {
-  components: {
-    xcTransfer: Transfer
-  },
+  // components: {
+  //   xcTransfer: Transfer
+  // },
   data() {
     return {
       testData: {
