@@ -2,7 +2,73 @@
   <div class="icon">
     <h2><span>Icon</span> <span class="chinese">图标</span></h2>
     <p>常用?的图标集合.</p>
+    <p class="tip">还在增减中,还不建议使用.</p>
     <div class="preview clearfix">
+      <div class="item">
+        <xc-icon type="pic"></xc-icon>
+        <span>pic</span>
+      </div>
+      <div class="item">
+        <xc-icon type="del"></xc-icon>
+        <span>del</span>
+      </div>
+      <div class="item">
+        <xc-icon type="txt"></xc-icon>
+        <span>txt</span>
+      </div>
+      <div class="item">
+        <xc-icon type="ok"></xc-icon>
+        <span>ok</span>
+      </div>
+      <div class="item">
+        <xc-icon type="warn"></xc-icon>
+        <span>warn</span>
+      </div>
+      <div class="item">
+        <xc-icon type="error"></xc-icon>
+        <span>error</span>
+      </div>
+      <div class="item">
+        <xc-icon type="bar"></xc-icon>
+        <span>bar</span>
+      </div>
+      <div class="item">
+        <xc-icon type="plus"></xc-icon>
+        <span>plus</span>
+      </div>
+      <div class="item">
+        <xc-icon type="bilibili"></xc-icon>
+        <span>bilibili</span>
+      </div>
+      <div class="item">
+        <xc-icon type="github"></xc-icon>
+        <span>github</span>
+      </div>
+      <div class="item">
+        <xc-icon type="trash"></xc-icon>
+        <span>trash</span>
+      </div>
+      <div class="item">
+        <xc-icon type="copy"></xc-icon>
+        <span>copy</span>
+      </div>
+      <div class="item">
+        <xc-icon type="html" :colors="['#e54d14']"></xc-icon>
+        <span>html</span>
+      </div>
+      <div class="item">
+        <xc-icon type="sass"></xc-icon>
+        <span>sass</span>
+      </div>
+      <div class="item">
+        <xc-icon type="json"></xc-icon>
+        <span>json</span>
+      </div>
+      <div class="item">
+        <xc-icon type="vue"></xc-icon>
+        <span>vue</span>
+      </div>
+      <br>
     </div>
     <h3><span>Attributes</span></h3>
     <xc-doc :list="doc"></xc-doc>
@@ -13,17 +79,12 @@
 export default {
   data() {
     return {
-      baseDisabled: false,
-      loading: false,
+      list: ['pic', 'del', 'txt', 'ok', 'warn', 'error', 'bar', 'plus', 'bilibili', 'github', 'trash', 'copy', 'html', 'sass', 'json', 'vue'],
       doc: [
-        {property: 'type', description: '情景色: primary/info/success/warning/error; 边框类型: dashed/dotted 多个时优先级递增', type: 'String', default: ''},
-        {property: 'disabled', description: '是否禁用,禁用后会变成黑白模式同时鼠标hover时会有禁用样式, 屏蔽事件', type: 'Boolean', default: 'false'},
-        {property: 'width', description: '设定按钮最小宽度,支持auto/inherit以及px、em、%等单位的数值', type: 'Length', default: 'auto'},
-        {property: 'effect', description: '附加动画效果, spread: 波纹扩散', type: 'String', default: ''},
-        {property: 'shape', description: '形状,可能的值: circle/rectangle, circle需要与icon搭配使用来制作图标按钮', type: 'String', default: ''},
-        {property: 'icon', description: '附加图标, 值为xc-icon支持的所有值, 默认位置在左边如需在特定位置添加请直接在文字中使用xc-icon添加', type: 'String', default: ''},
-        {property: 'for', description: '外壳使用的label能直接继承for属性', type: 'String', default: ''},
-        {property: 'loading', description: '加载状态, 添加loading icon 如已有icon属性生成的图标会替换掉原有图标, 同disabled一样会屏蔽事件', type: 'Boolean', default: 'false'}
+        {property: 'type', description: '指定使用内置图标的代号(优先级低)', type: 'String', default: ''},
+        {property: 'colors', description: '图标颜色(高优先级属性,用于多色图标和修改图标默认颜色)', type: 'Array', default: '[]'},
+        {property: 'path', description: '图标轨迹', type: 'Array', default: ''},
+        {property: 'view', description: 'viewBox', type: 'String', default: '0 0 1024 1024'}
       ]
     };
   },
@@ -34,16 +95,23 @@ export default {
 
 <style lang="scss">
   .icon {
-    .item {
-      float: left;
-      margin: 0 .05rem .1rem;
-      font-size: .14rem;
-      line-height: 2.5;
-      border-radius: 4px;
-      color: #fff;
-    }
-    .tip {
-      margin: 0 5px 0;
+    .preview {
+      padding-bottom: .18rem;
+      .item {
+        float: left;
+        width: 10%;
+        min-width: 60px;
+        padding: 10px;
+        color: #666;
+        text-align: center;
+        svg {
+          height: 36px;
+        }
+        span {
+          display: block;
+          line-height: 2;
+        }
+      }
     }
   }
 </style>
