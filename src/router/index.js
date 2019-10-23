@@ -5,6 +5,7 @@ import ComponentPage from '@/components/page/component';
 import Transfer from '@/components/page/transfer';
 import Icon from '@/components/page/icon';
 import Button from '@/components/page/button';
+import Mask from '@/components/page/mask';
 
 Vue.use(Router);
 
@@ -21,7 +22,8 @@ export default new Router({
         {path: '', name: 'components', component: HelloWorld},
         {path: 'transfer', name: 'transfer', component: Transfer},
         {path: 'icon', name: 'icon', component: Icon},
-        {path: 'button', name: 'button', component: Button}
+        {path: 'button', name: 'button', component: Button},
+        {path: 'mask', name: 'mask', component: Mask}
       ]
     }, {
       path: '*',

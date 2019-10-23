@@ -84,7 +84,7 @@
         </div>
       </div>
     </div>
-    <h3><span>API</span></h3>
+    <h3><span>Attributes</span></h3>
     <xc-doc :list="doc"></xc-doc>
     <h3><span>Events</span></h3>
     <xc-doc :list="eventsDoc" type="event"></xc-doc>

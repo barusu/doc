@@ -22,9 +22,16 @@
           </label>
           <ul class="oo-menu-item-list">
             <li class="oo-menu-item"> <router-link :to="{name: 'transfer'}">Transfer <span>选择器</span></router-link> </li>
-            <!-- <li class="oo-menu-item"> <router-link :to="{name: 'text'}">Text</router-link> </li> -->
-            <!-- <li class="oo-menu-item"> <router-link :to="{name: 'button'}">Button</router-link> </li> -->
-            <!-- <li class="oo-menu-item"> <router-link :to="{name: 'list'}">List</router-link> </li> -->
+          </ul>
+        </p>
+        <input type="checkbox" id="ck_other" class="oo-ck">
+        <p class="oo-menu-group">
+          <label for="ck_other" class="oo-menu-group-title">
+            <div>Other</div>
+            <span class="oo-arrow"></span>
+          </label>
+          <ul class="oo-menu-item-list">
+            <li class="oo-menu-item"> <router-link :to="{name: 'mask'}">Mask <span>蒙版</span></router-link> </li>
           </ul>
         </p>
         <!-- <input type="checkbox" id="ck_feedback" class="oo-ck">
