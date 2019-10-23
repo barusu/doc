@@ -15,25 +15,19 @@
     cursor: pointer;
     span {
       font-weight: inherit;
-      opacity: 0;
+      opacity: 1;
     }
   }
   .code-control-ck:checked + div {
     .code-control span {
-      opacity: 1;
+      opacity: 0;
     }
     // .code-head {
       // border-bottom: 1px solid #ddd;
       // border-radius: 2px 2px 0 0;
     // }
     pre {
-      height: 24em;
-      &.m {
-        height: 16em;
-      }
-      &.s {
-        height: 11em;
-      }
+      height: 0 !important;
     }
   }
   .code-head {

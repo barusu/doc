@@ -156,6 +156,9 @@ export default {};
       .code-wrapper {
         margin: 0 -.18rem 0;
       }
+      > p {
+        line-height: 3;
+      }
     }
     .data-view {
       border: 1px solid $borderColor;

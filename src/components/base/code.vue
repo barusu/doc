@@ -1,12 +1,12 @@
 <template>
-  <pre><code :class="lang" v-text="code" ref="code"></code></pre>
+  <pre :style="{'height': line + 'em'}"><code :class="lang" v-text="code" ref="code"></code></pre>
 </template>
 
 <script>
 import hljs from 'highlight.js';
 
 export default {
-  props: ['lang', 'code'],
+  props: ['lang', 'code', 'line'],
   watch: {
     code() {
       this.$nextTick(() => {
