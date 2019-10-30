@@ -56,7 +56,7 @@
       <div class="code-wrapper clearfix">
         <input type="checkbox" id="code_button2" class="kakushi code-control-ck" checked>
         <div class="code-html full">
-          <p class="code-head"><xc-icon type="vue"></xc-icon>  <label class="code-control" for="code_button2">&lt;<span>/</span>&gt;</label></p>
+          <p class="code-head vue"><xc-icon type="vue"></xc-icon>  <label class="code-control" for="code_button2">&lt;<span>/</span>&gt;</label></p>
           <xc-code lang="html" :code="html2" line="20"></xc-code>
         </div>
       </div>
@@ -79,7 +79,7 @@
       <div class="code-wrapper clearfix">
         <input type="checkbox" id="code_button3" class="kakushi code-control-ck" checked>
         <div class="code-html full">
-          <p class="code-head"><xc-icon type="vue"></xc-icon>  <label class="code-control" for="code_button3">&lt;<span>/</span>&gt;</label></p>
+          <p class="code-head vue"><xc-icon type="vue"></xc-icon>  <label class="code-control" for="code_button3">&lt;<span>/</span>&gt;</label></p>
           <xc-code lang="html" :code="html3" line="17"></xc-code>
         </div>
       </div>

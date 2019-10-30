@@ -19,10 +19,10 @@
       </xc-transfer>
       <br>
       <div class="code-wrapper clearfix">
-        <input type="checkbox" id="code_transfer" class="kakushi code-control-ck">
+        <input type="checkbox" id="code_transfer" class="kakushi code-control-ck" checked>
         <div class="code-html full">
-          <p class="code-head html"><xc-icon type="html"></xc-icon> HTML <label class="code-control" for="code_transfer">&lt;<span>/</span>&gt;</label></p>
-          <xc-code lang="html" :code="html" class="m"></xc-code>
+          <p class="code-head vue"><xc-icon type="vue"></xc-icon> <label class="code-control" for="code_transfer">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="html" :code="html" line="13"></xc-code>
         </div>
       </div>
     </div>
@@ -34,13 +34,13 @@
       <div class="code-wrapper clearfix">
         <input type="checkbox" id="code_transfer_data1" class="kakushi code-control-ck" v-model="ck1">
         <div class="code-json">
-          <p class="code-head json"><xc-icon type="json"></xc-icon> JSON <label class="code-control" for="code_transfer_data1">&lt;<span>/</span>&gt;</label></p>
-          <xc-code lang="json" :code="data1"></xc-code>
+          <p class="code-head json"><xc-icon type="json"></xc-icon> <label class="code-control" for="code_transfer_data1">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="json" :code="data1" line="10"></xc-code>
         </div>
         <input type="checkbox" id="code_transfer_data2" class="kakushi code-control-ck" v-model="ck1">
         <div class="code-json">
-          <p class="code-head json"><xc-icon type="json"></xc-icon> JSON <label class="code-control" for="code_transfer_data2">&lt;<span>/</span>&gt;</label></p>
-          <xc-code lang="json" :code="data2"></xc-code>
+          <p class="code-head json"><xc-icon type="json"></xc-icon> <label class="code-control" for="code_transfer_data2">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="json" :code="data2" line="10"></xc-code>
         </div>
       </div>
     </div>
@@ -157,7 +157,7 @@ export default {
     <path d="M677.888 584.3968L460.8 801.5872l-72.192-72.3968L605.696 512 388.608 294.7584 460.8 222.3616l289.792 289.5872z" fill="#FFFFFF"></path>
   </svg>
 </xc-transfer>`,
-      ck1: false,
+      ck1: true,
       data1: `{}`,
       data2: `{}`,
       doc: [
