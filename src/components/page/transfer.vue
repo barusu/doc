@@ -34,13 +34,13 @@
       <div class="code-wrapper clearfix">
         <input type="checkbox" id="code_transfer_data1" class="kakushi code-control-ck" v-model="ck1">
         <div class="code-json">
-          <p class="code-head json"><xc-icon type="json"></xc-icon> <label class="code-control" for="code_transfer_data1">&lt;<span>/</span>&gt;</label></p>
-          <xc-code lang="json" :code="data1" line="10"></xc-code>
+          <p class="code-head json"><xc-icon type="json"></xc-icon> Data1 <label class="code-control" for="code_transfer_data1">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="json" :code="data1" line="60"></xc-code>
         </div>
         <input type="checkbox" id="code_transfer_data2" class="kakushi code-control-ck" v-model="ck1">
         <div class="code-json">
-          <p class="code-head json"><xc-icon type="json"></xc-icon> <label class="code-control" for="code_transfer_data2">&lt;<span>/</span>&gt;</label></p>
-          <xc-code lang="json" :code="data2" line="10"></xc-code>
+          <p class="code-head json"><xc-icon type="json"></xc-icon> Data2 <label class="code-control" for="code_transfer_data2">&lt;<span>/</span>&gt;</label></p>
+          <xc-code lang="json" :code="data2" line="60"></xc-code>
         </div>
       </div>
     </div>
@@ -158,11 +158,90 @@ export default {
   </svg>
 </xc-transfer>`,
       ck1: true,
-      data1: `{}`,
-      data2: `{}`,
+      data1: `{
+  "depts":[
+    {"id":1,"pid":0,"name":"部门1"},
+    {"id":2,"pid":0,"name":"部门2"},
+    {"id":3,"pid":0,"name":"部门3"},
+    {"id":4,"pid":1,"name":"部门4"},
+    {"id":5,"pid":1,"name":"部门5"}
+  ],
+  "dutys":[
+    {
+      "id":1,
+      "name":"职务1",
+      "depts":[
+        {"id":1,"name":"部门1（选了职务默认部门全选）","tid":"Perez"},
+        {"id":2,"name":"部门2（需求变更 现不可单独选职务的部门 也不显示）","tid":"Wilson"},
+        {"id":3,"name":"部门3","tid":"Perez"}
+      ]
+    },{
+      "id":3,
+      "name":"职务4（没有任何部门有此职务 则不可选择）","depts":[]
+    }
+  ],
+  "groups":[
+    {
+      "id":1,
+      "name":"自定义的群组（用来批量选择用户用，结果集中不含群组信息）",
+      "users":[
+        {"id":1,"name":"张三"},
+        {"id":2,"name":"赵四"},
+        {"id":3,"name":"王五"},
+        {"id":4,"name":"王雨"}
+      ]
+    }
+  ],
+  "users":[
+    {"id":1,"name":"张三"},
+    {"id":2,"name":"赵四"},
+    {"id":3,"name":"王五"}
+  ],
+  "display":{
+    "depts":true,
+    "dutys":true,
+    "groups":true,
+    "users":true
+  }
+}`,
+      data2: `{
+  "depts": [
+    { "id": 5, "name": "部门" }
+  ],
+  "dutys": [
+    {
+      "id": 1,
+      "name": "职务1",
+      "depts": [
+        { "id": 2, "name": "部门1", "tid": "Jones" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "职务2",
+      "depts": [
+        { "id": 1, "name": "部门1", "tid": "Williams" },
+        { "id": 2, "name": "部门2", "tid": "Walker" },
+        { "id": 3, "name": "部门3", "tid": "Moore" }
+      ]
+    }
+  ],
+  "users": [
+    { "id": 1, "name": "张三" },
+    { "id": 2, "name": "赵四" },
+    { "id": 3, "name": "王五" },
+    { "id": 6, "name": "尼古拉斯" }
+  ],
+  "display": {
+    "depts": true,
+    "dutys": true,
+    "groups": true,
+    "users": true
+  }
+}`,
       doc: [
-        {property: 'data', description: '选择项数据,格式参考mock', type: 'Object', default: ''},
-        {property: 'value', description: '默认选中项', type: 'Object', default: ''},
+        {property: 'data', description: '选择项数据,格式参考下方Data1', type: 'Object', default: ''},
+        {property: 'value', description: '默认选中项,格式参考下方Data2', type: 'Object', default: ''},
         {property: 'disabled', description: '是否禁用', type: 'Boolean', default: 'false'},
         {property: 'disableadd', description: '是否禁用搜索', type: 'Boolean', default: 'false'},
         {property: 'size', description: '单个窗体的宽高值(不能小于默认值)', type: 'Array', default: '[240, 100]'}

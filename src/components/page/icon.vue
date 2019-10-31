@@ -79,7 +79,7 @@
 export default {
   data() {
     return {
-      list: ['pic', 'del', 'txt', 'ok', 'warn', 'error', 'bar', 'plus', 'bilibili', 'github', 'trash', 'copy', 'html', 'sass', 'json', 'vue'],
+      list: ['pic', 'del', 'txt', 'ok', 'warn', 'error', 'bar', 'plus', 'bilibili', 'github', 'trash', 'copy', 'html', 'sass', 'json', 'vue', 'left', 'right'],
       doc: [
         {property: 'type', description: '指定使用内置图标的代号(优先级低)', type: 'String', default: ''},
         {property: 'colors', description: '图标颜色(高优先级属性,用于多色图标和修改图标默认颜色)', type: 'Array', default: '[]'},
