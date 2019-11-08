@@ -32,6 +32,7 @@
           </label>
           <ul class="oo-menu-item-list">
             <li class="oo-menu-item"> <router-link :to="{name: 'mask'}">Mask <span>蒙版</span></router-link> </li>
+            <li class="oo-menu-item"> <router-link :to="{name: 'calendar'}">Calendar <span>日历</span></router-link> </li>
           </ul>
         </p>
         <!-- <input type="checkbox" id="ck_feedback" class="oo-ck">
