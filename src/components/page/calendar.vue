@@ -16,7 +16,7 @@
     <p class="tip">项目需添加 moment.js 才可使用此组件.</p>
     <p>
       <span class="demo">
-        <xc-calendar :sp="spDays"></xc-calendar>
+        <xc-calendar :sp="spDays" @select="select"></xc-calendar>
       </span>
     </p>
     <h3><span>Attributes</span></h3>
@@ -35,11 +35,16 @@ export default {
         {property: 'spDays', description: '日期字符串数组,标红点', type: 'Array', default: '[]'}
       ],
       eventsDoc: [
-        {eventName: 'change', description: '月份切换事件', callbackParamet: 'year, month'}
+        {eventName: 'change', description: '月份切换事件', callbackParamet: 'YYYY, M'},
+        {eventName: 'select', description: '日期点击事件', callbackParamet: 'YYYY-MM-DD'}
       ]
     };
   },
-  methods: {},
+  methods: {
+    select(d) {
+      this.$msg.info(d);
+    }
+  },
   mounted() {}
 };
 </script>
