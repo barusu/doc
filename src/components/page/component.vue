@@ -24,6 +24,16 @@
             <li class="oo-menu-item"> <router-link :to="{name: 'transfer'}">Transfer <span>选择器</span></router-link> </li>
           </ul>
         </p>
+        <input type="checkbox" id="ck_notice" class="oo-ck">
+        <p class="oo-menu-group">
+          <label for="ck_notice" class="oo-menu-group-title">
+            <div>Notice</div>
+            <span class="oo-arrow"></span>
+          </label>
+          <ul class="oo-menu-item-list">
+            <li class="oo-menu-item"> <router-link :to="{name: 'message'}">Message <span>消息提示</span></router-link> </li>
+          </ul>
+        </p>
         <input type="checkbox" id="ck_other" class="oo-ck">
         <p class="oo-menu-group">
           <label for="ck_other" class="oo-menu-group-title">
@@ -164,8 +174,17 @@ export default {};
       .code-wrapper {
         margin: 0 -.18rem 0;
       }
+      > h3 {
+        margin: 0;
+        font-size: .16rem;
+        line-height: 1;
+        margin-bottom: .5em;
+      }
       > p {
-        line-height: 3;
+        line-height: 1.5;
+        margin-bottom: .5em;
+        font-size: 12px;
+        color: #666;
       }
     }
     .data-view {
