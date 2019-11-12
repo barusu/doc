@@ -43,12 +43,13 @@ export default {
   components: {
     oTd: {
       render(creatE) {
-        const key = ['String', 'Boolean', 'Length', 'false', 'true', 'auto', 'disabled', 'Object', 'Integer', 'Function', 'Array', 'Color', 'Number', 'placeholder', 'base', 'class', 'value', 'input', 'single'];
+        const key = ['String', 'Boolean', 'Length', 'false', 'true', 'auto', 'disabled', 'Object', 'Integer', 'Function', 'Array', 'Color', 'Number', 'placeholder', 'base', 'class', 'value', 'input', 'single', '<br>'];
         var v = this.value;
         key.forEach(i => {
           v = v.replace(new RegExp(i, 'g'), 'ø' + i + 'ø');
         });
         v = v.split('ø').map(i => {
+          if(i == '<br>') return creatE('br');
           if(key.some(k => k == i)) {
             return creatE('span', {class: 'code'}, i);
           }

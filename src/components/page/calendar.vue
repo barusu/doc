@@ -32,7 +32,7 @@ export default {
     return {
       spDays: ['2019-11-11'],
       doc: [
-        {property: 'spDays', description: '日期字符串数组,标红点', type: 'Array', default: `[] (🌰: ['2019-11-11'])`}
+        {property: 'spDays', description: '日期字符串数组,标红点', type: 'Array', default: `[]<br>🌰['2019-11-11']`}
       ],
       eventsDoc: [
         {eventName: 'change', description: '月份切换事件', callbackParamet: 'YYYY, M'},
