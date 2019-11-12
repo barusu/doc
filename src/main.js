@@ -20,6 +20,9 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  data: {
+    version: Shiro.version
+  },
   router,
   components: {App},
   template: '<App/>'

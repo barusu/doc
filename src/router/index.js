@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
 import ComponentPage from '@/components/page/component';
+import Component from '@/components/page/index';
 import Transfer from '@/components/page/transfer';
 import Icon from '@/components/page/icon';
 import Button from '@/components/page/button';
@@ -13,14 +13,10 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }, {
       path: '/components',
       component: ComponentPage,
       children: [
-        {path: '', name: 'components', component: HelloWorld},
+        {path: '', name: 'components', component: Component},
         {path: 'transfer', name: 'transfer', component: Transfer},
         {path: 'icon', name: 'icon', component: Icon},
         {path: 'button', name: 'button', component: Button},
@@ -29,7 +25,7 @@ export default new Router({
       ]
     }, {
       path: '*',
-      redirect: '/'
+      redirect: '/components'
     }
   ]
 });
