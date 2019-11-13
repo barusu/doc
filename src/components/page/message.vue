@@ -31,9 +31,9 @@
       </div>
       <br>
       <div class="code-wrapper clearfix">
-        <input type="checkbox" id="code_button1" class="kakushi code-control-ck" checked>
+        <input type="checkbox" id="code_button2" class="kakushi code-control-ck" checked>
         <div class="code-html full">
-          <p class="code-head vue"><xc-icon type="vue"></xc-icon>  <label class="code-control" for="code_button1">&lt;<span>/</span>&gt;</label></p>
+          <p class="code-head vue"><xc-icon type="vue"></xc-icon>  <label class="code-control" for="code_button2">&lt;<span>/</span>&gt;</label></p>
           <xc-code lang="html" :code="html1" line="18"></xc-code>
         </div>
       </div>
@@ -60,7 +60,7 @@ export default {
     }
   }
 };
-</style>
+<\/script>
 `,
       doc: [
         {property: 'message', description: '消息文字', type: 'String', default: ''},
