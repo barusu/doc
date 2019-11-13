@@ -141,7 +141,6 @@ export default {};
         font-size: .16rem;
         font-family: Helvetica, Arial, sans-serif;
         line-height: 2.5;
-        margin-top: .5em;
       }
       > p {
         line-height: 1.5;
@@ -151,7 +150,7 @@ export default {};
         &.tip {
           display: inline-block;
           line-height: 1;
-          margin-bottom: 2em;
+          margin-bottom: 1em;
           border-radius: 1px;
           background: #fdbc40;
           box-shadow: 0 0 0 0.5em #fdbc40;

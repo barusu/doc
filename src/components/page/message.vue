@@ -34,7 +34,7 @@
         <input type="checkbox" id="code_button2" class="kakushi code-control-ck" checked>
         <div class="code-html full">
           <p class="code-head vue"><xc-icon type="vue"></xc-icon>  <label class="code-control" for="code_button2">&lt;<span>/</span>&gt;</label></p>
-          <xc-code lang="html" :code="html1" line="18"></xc-code>
+          <xc-code lang="html" :code="html2" line="32"></xc-code>
         </div>
       </div>
     </div>
@@ -60,8 +60,32 @@ export default {
     }
   }
 };
-<\/script>
-`,
+<\/script>`,
+      html2: `<template>
+  <xc-button type="info" @click="open1('消息')">消息</xc-button>
+  <xc-button type="success" @click="open2('成功')">成功</xc-button>
+  <xc-button type="warning" @click="open3('警告')">警告</xc-button>
+  <xc-button type="error" @click="open4('错误')">错误</xc-button>
+</template>
+
+<script>
+export default {
+  methods: {
+    open1(msg) {
+      this.$msg.info(msg);
+    },
+    open2(msg) {
+      this.$msg.success(msg);
+    },
+    open3(msg) {
+      this.$msg.warning(msg);
+    },
+    open4(msg) {
+      this.$msg.error(msg);
+    }
+  }
+};
+<\/script>`,
       doc: [
         {property: 'message', description: '消息文字', type: 'String', default: ''},
         {property: 'closed', description: '关闭后的回调函数', type: 'Function', default: ''},
@@ -83,7 +107,7 @@ export default {
       this.$msg.warning(msg);
     },
     open4(msg) {
-      this.$msg.error(msg, 10000);
+      this.$msg.error(msg);
     }
   },
   mounted() {}
