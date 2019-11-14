@@ -22,7 +22,7 @@
     <h2><span>Calendar</span> <span class="chinese">日历</span></h2>
     <p>简易日历.</p>
     <p>添加slot插槽,可用于添加标题等. (可能重叠,样式根据项目自行添加覆盖)</p>
-    <p class="tip">项目需添加 moment.js 才可使用此组件.</p>
+    <p class="tip">项目需添加 moment.js 才可使用此组件. NPM等形式引入需挂载到全局变量 moment 中.</p>
     <p>
       <span class="demo">
         <xc-calendar :sp="spDays" @select="select" align="center"><xc-icon type="github" style="height: 24px; vertical-align: text-top;"></xc-icon> 工作安排</xc-calendar>
