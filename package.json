@@ -13,6 +13,7 @@
   "dependencies": {
     "flyio": "^0.6.14",
     "highlight.js": "^9.15.10",
+    "jandar-timelinejs3": "^1.0.1",
     "shiroui": "^0.4.12",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

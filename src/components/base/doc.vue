@@ -12,6 +12,10 @@
         <th>Description <span class="cn">说明</span></th>
         <th>CallbackParamet <span class="cn">回调参数</span></th>
       </tr>
+      <tr v-if="type === 'method'">
+        <th>MethodName <span class="cn">事件名称</span></th>
+        <th>Description <span class="cn">说明</span></th>
+      </tr>
     </thead>
     <tbody v-if="type === 'doc'">
       <tr v-for="i in list" :key="i.property">
@@ -26,6 +30,12 @@
         <td v-html="i.eventName"></td>
         <td is="o-td" :value="i.description"></td>
         <td is="o-td" :value="i.callbackParamet || '—'"></td>
+      </tr>
+    </tbody>
+     <tbody v-if="type === 'method'">
+      <tr v-for="i in list" :key="i.methodName">
+        <td>{{i.methodName}}</td>
+        <td is="o-td" :value="i.description"></td>
       </tr>
     </tbody>
   </table>

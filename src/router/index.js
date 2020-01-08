@@ -8,6 +8,7 @@ import Button from '@/components/page/button';
 import Mask from '@/components/page/mask';
 import Calendar from '@/components/page/calendar';
 import Message from '@/components/page/message';
+import Timeline from '@/components/page/timeline';
 
 Vue.use(Router);
 
@@ -23,7 +24,8 @@ export default new Router({
         {path: 'button', name: 'button', component: Button},
         {path: 'calendar', name: 'calendar', component: Calendar},
         {path: 'mask', name: 'mask', component: Mask},
-        {path: 'message', name: 'message', component: Message}
+        {path: 'message', name: 'message', component: Message},
+        {path: 'timeline', name: 'timeline', component: Timeline}
       ]
     }, {
       path: '*',
