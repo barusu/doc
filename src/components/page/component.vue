@@ -2,6 +2,7 @@
   <main class="component">
     <div class="sidebar">
       <div class="oo-menu">
+        <p class="oo-menu-title"> <router-link :to="{name: 'start'}">开发指南<span>开篇</span></router-link> </p>
         <p class="oo-menu-title"> <router-link :to="{name: 'components'}">Component <span>组件</span></router-link> </p>
         <input type="checkbox" id="ck_general" class="oo-ck">
         <p class="oo-menu-group">

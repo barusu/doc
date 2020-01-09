@@ -9,11 +9,19 @@ import Mask from '@/components/page/mask';
 import Calendar from '@/components/page/calendar';
 import Message from '@/components/page/message';
 import Timeline from '@/components/page/timeline';
+import Start from '@/components/page/start';
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
+    {
+      path: '/start',
+      component: ComponentPage,
+      children: [
+        {path: '', name: 'start', component: Start}
+      ]
+    },
     {
       path: '/components',
       component: ComponentPage,
