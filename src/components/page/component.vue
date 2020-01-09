@@ -158,6 +158,7 @@ export default {};
           box-shadow: 0 0 0 0.5em #fdbc40;
           font-size: 12px;
           color: #fff;
+          margin-left:5px;
         }
         .keyword {
           color: #ff3102;

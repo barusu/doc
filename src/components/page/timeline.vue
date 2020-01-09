@@ -33,7 +33,8 @@
     </div>
     <h2><span>CDN</span> <span class="chinese"></span></h2>
     <p>可以通过 <a style="color:blue" href="http://172.16.137.53:4873/-/web/detail/jandar-timelinejs3" target="_black">Download tarball</a> 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。</p>
-     <div class="preview clearfix">
+     <p class="tip">值得注意的是，cdn方式引入的为timeline.cdn.js</p>
+    <div class="preview clearfix">
       <xc-code lang="javascript" :code="cdnImportCode" line="8"></xc-code>
     </div>
     <h2><span>示例</span></h2>
@@ -148,7 +149,7 @@ import {TL} from 'jandar-timelinejs3'`,
       cdnImportCode: `// 引入样式
 <link rel="stylesheet" href="jandar-timelinejs3/css/timeline.css">
 <!-- 引入组件 -->
-<script src="jandar-timelinejs3/timeline.js"><\/script>`,
+<script src="jandar-timelinejs3/timeline.cdn.js"><\/script>`,
       doc: [
         {property: 'debug', description: '如果为true，将启用大量控制台日志记录', type: 'Boolean', default: `false`},
         {property: 'height', description: '时间轴的高度', type: 'String', default: `this._el.container.offsetHeight`},
