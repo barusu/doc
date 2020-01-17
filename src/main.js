@@ -15,6 +15,10 @@ import 'highlight.js/styles/atom-one-light.css';
 import xc from '@/components/base/index.js';
 Vue.use(xc);
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

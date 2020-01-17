@@ -10,6 +10,7 @@ import Calendar from '@/components/page/calendar';
 import Message from '@/components/page/message';
 import Timeline from '@/components/page/timeline';
 import Start from '@/components/page/start';
+import Dreamweaver from '@/components/page/dreamweaver';
 
 Vue.use(Router);
 
@@ -33,7 +34,8 @@ export default new Router({
         {path: 'calendar', name: 'calendar', component: Calendar},
         {path: 'mask', name: 'mask', component: Mask},
         {path: 'message', name: 'message', component: Message},
-        {path: 'timeline', name: 'timeline', component: Timeline}
+        {path: 'timeline', name: 'timeline', component: Timeline},
+        {path: 'dreamweaver', name: 'dreamweaver', component: Dreamweaver}
       ]
     }, {
       path: '*',
