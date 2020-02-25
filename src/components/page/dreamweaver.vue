@@ -21,9 +21,22 @@
   <div class="dreamweaver-page">
     <h2><span>Dreamweaver</span> <span class="chinese">版面绘制</span></h2>
     <p>鼠标框选进行版面绘制</p>
-    <p>文档完善中....</p>
+    <h2><span>npm</span> <span class="chinese">安装</span></h2>
+    <p>暂只支持 npm 的方式安装。</p>
+    <div class="preview clearfix">
+      <xc-code lang="javascript" :code="npmInstallCode" line="4"></xc-code>
+    </div>
+    <p></p>
+    <p>引入相关文件</p>
+    <div class="preview clearfix">
+      <xc-code lang="javascript" :code="npmImportCode" line="5"></xc-code>
+    </div>
+    <h2><span>示例</span></h2>
     <Dreamweaver :components="componentList" :data="data"/>
      <!-- <div @click="getData" style="" ref="dreamweaver" >获取数据</div> -->
+    <div class="preview clearfix">
+      <!-- <xc-code lang="javascript" :code="code" line="60"></xc-code> -->
+    </div>
  </div>
 </template>
 
@@ -36,6 +49,9 @@ export default {
   },
   data() {
     return {
+      npmInstallCode: ` npm i jandar-dreamweaver -S`,
+      npmImportCode: `// import dreamweaver相关文件
+import Dreamweaver from 'jandar-dreamweaver'`,
       componentList: [
         {id: 1, parentId: null, name: "置顶信息", key: "zdxx"},
         {id: 5, parentId: null, name: "在线协作", key: "zxxz"},

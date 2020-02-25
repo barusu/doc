@@ -73,16 +73,17 @@ export default {
       npmInstallCode: ` npm i jandar-timelinejs3 -S`,
       timelineOptions: {
         timenav_height: 220,
-        zoom_sequence: [0.5, 1, 2],
+        zoom_sequence: [0.5, 1],
         scale_factor: 0.5,
         start_at_slide: 2
       },
       timelineOptions2: {
         timenav_height: 220,
-        zoom_sequence: [0.5, 1, 2],
-        scale_factor: 0.5,
+        zoom_sequence: [0.5, 1],
+        scale_factor: 1,
         start_at_slide: 2,
-        is_slide_open: false
+        is_slide_open: false,
+        timeaxis_tick_show: false
       },
       timeline: {
         'events': [
@@ -167,7 +168,8 @@ import {TL} from 'jandar-timelinejs3'`,
         {property: 'duration', description: '动画持续时间（以毫秒为单位）', type: 'Integer', default: `1000`},
         {property: 'slide_padding_lr', description: '每张幻灯片左右两侧的填充（以像素为单位）', type: 'Integer', default: `100`},
         {property: 'language', description: '时间轴语言,默认中文', type: 'String', default: `zh`},
-        {property: 'is_slide_open', description: '是否显示幻灯片', type: 'Boolean', default: `true`}
+        {property: 'is_slide_open', description: '是否显示幻灯片', type: 'Boolean', default: `true`},
+        {property: 'timeaxis_tick_show', description: '如果为true，则显示所有时间点，否则仅显示数据时间点', type: 'Boolean', default: `true`}
       ],
       eventsDoc: [
         {eventName: 'back_to_start', description: '当用户单击控件以返回到时间线的开头时', callbackParamet: ''},
@@ -208,9 +210,9 @@ import {TL} from 'jandar-timelinejs3'`,
       <script type="text/javascript">
       var attributesOptions = {
           timenav_height: 220,
-          zoom_sequence: [0.5, 1, 2],
+          zoom_sequence: [0.5, 1],
           scale_factor: 0.5,
-          start_at_slide: 1
+          start_at_slide: 2
       }
       // 创建Timeline对象
       var timeline = new TL.Timeline('timeline-embed',{
@@ -256,10 +258,11 @@ import {TL} from 'jandar-timelinejs3'`,
       <script type="text/javascript">
       var attributesOptions = {
           timenav_height: 220,
-          zoom_sequence: [0.5, 1, 2],
-          scale_factor: 0.5,
-          start_at_slide: 1,
-          is_slide_open: false
+          zoom_sequence: [0.5, 1],
+          scale_factor: 1,
+          start_at_slide: 2,
+          is_slide_open: false,
+          timeaxis_tick_show: false
       }
       // 创建Timeline对象
       new TL.Timeline('timeline-embed2',{...}, attributesOptions);
